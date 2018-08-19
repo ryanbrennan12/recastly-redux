@@ -10,6 +10,8 @@ import store from './store/store.js';
 //  the rest of your app.
 
 ReactDOM.render(
-    <App API_KEY={YOUTUBE_API_KEY} searchYouTube={searchYouTube} />,
+  <Provider store={store}>
+    <App API_KEY={YOUTUBE_API_KEY} searchYouTube={searchYouTube} />
+  </Provider>,
   document.getElementById('app')
 );
