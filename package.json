@@ -6,7 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "test": "live-server --open=./SpecRunner.html --port=8081",
+    "test": "live-server --open=./SpecRunner.html --port=8080",
     "start": "live-server",
     "compile": "webpack -d --watch",
     "buildWatch": "babel . --out-dir compiled --presets=env,react --ignore=node_modules,compiled --source-maps inline --watch"
