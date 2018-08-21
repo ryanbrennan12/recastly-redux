@@ -2,6 +2,8 @@ import searchYouTube from '../lib/searchYouTube.js';
 import changeVideoList from './videoList.js';
 import changeVideo from './currentVideo.js';
 import YOUTUBE_API_KEY from '../config/youtube.js';
+// import currentVideoReducer from '../reducers/currentVideo.js';
+// import videoListReducer from '../reducers/videoList.js';
 
 
 var handleVideoSearch = (q) => {
@@ -11,13 +13,14 @@ var handleVideoSearch = (q) => {
     key: YOUTUBE_API_KEY,
     query: q
   }
-  return function () {}
-  // return searchYouTube(options);
-  // return function (dispatch) {
-  //   dispatch(changeVideoList(videos))
-
-
-  // }
+  return (dispatch) => {
+    searchYouTube(options, (videos) => {
+      dispatch(changeVideoList(videos));
+      dispatch(changeVideo(videos[0]));
+    });
+  }
 };
+
+
 
 export default handleVideoSearch;
