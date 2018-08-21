@@ -7,3 +7,4 @@ var VideoPlayerContainer = () => {};
 //dispatchers with your VideoPlayer component props.
 
 export default VideoPlayerContainer;
+

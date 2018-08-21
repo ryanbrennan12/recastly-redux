@@ -25,6 +25,7 @@ export default class App extends React.Component {
 
   handleVideoListEntryTitleClick(video) {
     this.setState({currentVideo: video});
+    store.dispatch(video);
   }
 
   getYouTubeVideos(query) {
